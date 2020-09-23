@@ -11,13 +11,16 @@ public class Location : Node {
     [TextArea(15, 20)]
     public string description;
 
-    [Output] public string toFrontDoor;
-    [Output] public string toKitchen;
-    [Output] public string toBedroom;
-    [Output] public string toBathroom;
+	//    [Output] public string toFrontDoor;
+	//    [Output] public string toKitchen;
+	//    [Output] public string toBedroom;
+	//    [Output] public string toBathroom;
 
-    // Use this for initialization
-    protected override void Init() {
+	[Input(backingValue = ShowBackingValue.Never)] public Location input;
+	[Output(backingValue = ShowBackingValue.Never)] public Location output;
+
+	// Use this for initialization
+	protected override void Init() {
 		base.Init();
 		
 	}

@@ -13,60 +13,64 @@ MonoBehaviour:
   m_Name: Location
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -376, y: -200}
+  position: {x: -472, y: -120}
   ports:
     keys:
-    - toFrontDoor
-    - toKitchen
-    - toBedroom
-    - toBathroom
+    - roomLinks 1
+    - output
+    - input
+    - roomLinks 0
     values:
-    - _fieldName: toFrontDoor
+    - _fieldName: roomLinks 1
       _node: {fileID: -8526086750179634097}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 2464414640997401135}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: output
+      _node: {fileID: -8526086750179634097}
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: toKitchen
+    - _fieldName: input
       _node: {fileID: -8526086750179634097}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
-      _direction: 1
+      _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: toBedroom
+    - _fieldName: roomLinks 0
       _node: {fileID: -8526086750179634097}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 1140732058527520491}
+        reroutePoints: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: toBathroom
-      _node: {fileID: -8526086750179634097}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
+      _dynamic: 1
   locationName: Living Room
   description: 'The living room is a place of philosophical conflicts. At the center
     of the house, it is dynamic: one must pass through its boundaries to reach any
     other room. At the same time it is static: the primary activity performed in
     it is sitting. Life is full of paradoxes, so why should the *living* room be
     any different.'
-  toFrontDoor: 
-  toKitchen: 
-  toBedroom: 
-  toBathroom: 
+  input: {fileID: 0}
+  output: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +86,51 @@ MonoBehaviour:
   nodes:
   - {fileID: -8526086750179634097}
   - {fileID: 2464414640997401135}
+  - {fileID: 1140732058527520491}
+--- !u!114 &1140732058527520491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad1ea6198dc2f844966a1e4463e3607, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: -360}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 1140732058527520491}
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: roomLinks 0
+        node: {fileID: -8526086750179634097}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 1140732058527520491}
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  locationName: 
+  description: 
+  input: {fileID: 0}
+  output: {fileID: 0}
 --- !u!114 &2464414640997401135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,50 +147,31 @@ MonoBehaviour:
   position: {x: 162.65605, y: -97.151}
   ports:
     keys:
-    - toFrontDoor
-    - toKitchen
-    - toBedroom
-    - toBathroom
+    - output
+    - input
     values:
-    - _fieldName: toFrontDoor
+    - _fieldName: output
       _node: {fileID: 2464414640997401135}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: toKitchen
+    - _fieldName: input
       _node: {fileID: 2464414640997401135}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: toBedroom
-      _node: {fileID: 2464414640997401135}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: toBathroom
-      _node: {fileID: 2464414640997401135}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
+      _typeQualifiedName: Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: roomLinks 1
+        node: {fileID: -8526086750179634097}
+        reroutePoints: []
+      _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   locationName: 
   description: 
-  toFrontDoor: 
-  toKitchen: 
-  toBedroom: 
-  toBathroom: 
+  input: {fileID: 0}
+  output: {fileID: 0}
